@@ -349,7 +349,7 @@ function checkways() {
 	echo "checking starting ways for existence\n";
 	foreach ($islands as $island=>$ways) foreach ($ways as $dontcare=>$way) {
 
-		$response = file_get_contents("http://www.openstreetmap.org/api/0.6/way/$way");
+		$response = file_get_contents("https://api.openstreetmap.org/api/0.6/way/$way");
 
 		// you get http error "410: Gone" if the way doesn't exist any more
 		if (!(strlen($response)>1))
